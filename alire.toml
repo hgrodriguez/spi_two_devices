@@ -1,0 +1,11 @@
+name = "spi_two_devices"
+description = "Demo program for 2 Raspberry Picoss talking to each other using SPI"
+version = "0.0.1"
+
+authors = ["Holger Rodriguez"]
+maintainers = ["Holger Rodriguez <github@roseng.ch>"]
+maintainers-logins = ["hgrodriguez"]
+
+executables = ["spi_two_devices"]
+[[depends-on]]  # Added by alr
+pico_bsp = "0.6.0"  # Added by alr
