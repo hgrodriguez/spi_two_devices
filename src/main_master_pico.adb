@@ -10,7 +10,7 @@ with Pico;
 
 with SPI_Master;
 
-procedure Main_Master is
+procedure Main_Master_Pico is
 
    procedure Trace_Initialize;
    -----------------------------------------------------------------------
@@ -92,4 +92,4 @@ begin
       RP.Device.Timer.Delay_Milliseconds (100);
       Pico.LED.Toggle;
    end loop;
-end Main_Master;
+end Main_Master_Pico;

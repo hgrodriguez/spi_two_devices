@@ -10,7 +10,7 @@ with Pico;
 
 with SPI_Slave;
 
-procedure Main_Slave is
+procedure Main_Slave_Pico is
 
    procedure Trace_Initialize;
    -----------------------------------------------------------------------
@@ -74,4 +74,4 @@ begin
       RP.Device.Timer.Delay_Milliseconds (10);
       Pico.LED.Toggle;
    end loop;
-end Main_Slave;
+end Main_Slave_Pico;
