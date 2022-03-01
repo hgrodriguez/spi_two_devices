@@ -8,7 +8,7 @@ with RP.Device;
 
 with Pico;
 
-with SPI_Slave;
+with SPI_Slave_Pico;
 
 procedure Main_Slave_Pico is
 
@@ -47,7 +47,7 @@ begin
 
    Trace_Initialize;
 
-   SPI_Slave.Initialize;
+   SPI_Slave_Pico.Initialize;
 
    loop
       Slave_Status_In.Clear;
@@ -55,18 +55,18 @@ begin
       Data_In_NEQ_Data_Out.Clear;
 
       --  do this to get the slave ready
-      SPI_Slave.SPI.Transmit (Data_Out, Status_Out);
+      SPI_Slave_Pico.SPI.Transmit (Data_Out, Status_Out);
       if Status_Out /= HAL.SPI.Ok then
          Slave_Status_Out.Set;
       end if;
 
       for I in 1 .. 1 loop
-         SPI_Slave.SPI.Receive (Data_In, Status_In);
+         SPI_Slave_Pico.SPI.Receive (Data_In, Status_In);
          if Status_In /= HAL.SPI.Ok then
             Slave_Status_In.Set;
          end if;
          Data_Out (1) := not Data_In (1);
-         SPI_Slave.SPI.Transmit (Data_Out, Status_Out);
+         SPI_Slave_Pico.SPI.Transmit (Data_Out, Status_Out);
          if Status_Out /= HAL.SPI.Ok then
             Slave_Status_Out.Set;
          end if;

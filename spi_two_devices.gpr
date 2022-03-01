@@ -1,3 +1,4 @@
+with "itsybitsy_rp2040_bsp.gpr";
 with "pico_bsp.gpr";
 with "config/spi_two_devices_config.gpr";
 project Spi_Two_Devices is
@@ -9,7 +10,8 @@ project Spi_Two_Devices is
    for Object_Dir use "obj";
    for Create_Missing_Dirs use "True";
    for Exec_Dir use "bin";
-   for Main use ("main_master_pico.adb", "main_slave_pico.adb");
+   for Main use ("main_master_pico.adb", "main_slave_pico.adb",
+                 "main_master_itsybitsy.adb", "main_slave_itsybitsy.adb");
 
    type Enabled_Kind is ("enabled", "disabled");
    Compile_Checks : Enabled_Kind := External ("SPI_TWO_DEVICES_COMPILE_CHECKS", "disabled");

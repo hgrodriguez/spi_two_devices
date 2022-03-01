@@ -6,7 +6,7 @@ with RP.SPI;
 
 with Pico;
 
-package SPI_Slave is
+package SPI_Slave_Pico is
 
    -----------------------------------------------------------------------
    --  Slave section
@@ -24,4 +24,4 @@ package SPI_Slave is
 
    procedure Initialize;
 
-end SPI_Slave;
+end SPI_Slave_Pico;

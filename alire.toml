@@ -7,7 +7,10 @@ maintainers = ["Holger Rodriguez <github@roseng.ch>"]
 maintainers-logins = ["hgrodriguez"]
 
 executables = ["spi_two_devices"]
+
 [[depends-on]]  # Added by alr
 pico_bsp = "1.1.0"  # Added by alr
 [[depends-on]]  # Added by alr
 gnat_arm_elf = "^11.2.3"  # Added by alr
+[[depends-on]]  # Added by alr
+itsybitsy_rp2040_bsp = "~0.1.0"  # Added by alr

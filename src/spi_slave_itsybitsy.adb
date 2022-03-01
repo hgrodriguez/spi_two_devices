@@ -1,4 +1,4 @@
-package body SPI_Slave is
+package body SPI_Slave_ItsyBitsy is
 
    procedure Initialize is
    begin
@@ -9,4 +9,4 @@ package body SPI_Slave is
       SPI.Configure (Config);
    end Initialize;
 
-end SPI_Slave;
+end SPI_Slave_ItsyBitsy;

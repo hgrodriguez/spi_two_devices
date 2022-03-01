@@ -8,7 +8,7 @@ with RP.Device;
 
 with Pico;
 
-with SPI_Master;
+with SPI_Master_Pico;
 
 procedure Main_Master_Pico is
 
@@ -61,7 +61,7 @@ begin
 
    Initialize_Own_SS;
 
-   SPI_Master.Initialize;
+   SPI_Master_Pico.Initialize;
 
    loop
       Master_Status_Out.Clear;
@@ -71,13 +71,13 @@ begin
       for I in 1 .. 1 loop
          My_Own_SS.Clear;
 
-         SPI_Master.SPI.Transmit (Data_Out, Status_Out);
+         SPI_Master_Pico.SPI.Transmit (Data_Out, Status_Out);
          if Status_Out /= HAL.SPI.Ok then
             Master_Status_Out.Set;
          end if;
 
          if True then
-            SPI_Master.SPI.Receive (Data_In, Status_In, 0);
+            SPI_Master_Pico.SPI.Receive (Data_In, Status_In, 0);
             if Status_In /= HAL.SPI.Ok then
                Slave_Status_In.Set;
             end if;

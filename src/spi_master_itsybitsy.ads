@@ -4,17 +4,17 @@ with RP.Device;
 with RP.GPIO;
 with RP.SPI;
 
-with Pico;
+with ItsyBitsy;
 
-package SPI_Master is
+package SPI_Master_ItsyBitsy is
 
    -----------------------------------------------------------------------
    --  Master section
-   SPI  : RP.SPI.SPI_Port renames RP.Device.SPI_0;
-   MISO : RP.GPIO.GPIO_Point renames Pico.GP0;
-   NSS  : RP.GPIO.GPIO_Point renames Pico.GP1;
-   SCK  : RP.GPIO.GPIO_Point renames Pico.GP2;
-   MOSI : RP.GPIO.GPIO_Point renames Pico.GP3;
+   SPI  : RP.SPI.SPI_Port renames RP.Device.SPI_1;
+   MISO : RP.GPIO.GPIO_Point renames ItsyBitsy.GP28;
+   NSS  : RP.GPIO.GPIO_Point renames ItsyBitsy.GP29;
+   SCK  : RP.GPIO.GPIO_Point renames ItsyBitsy.GP26;
+   MOSI : RP.GPIO.GPIO_Point renames ItsyBitsy.GP27;
 
    Config          : constant RP.SPI.SPI_Configuration
      := (Role   => RP.SPI.Master,
@@ -24,4 +24,4 @@ package SPI_Master is
 
    procedure Initialize;
 
-end SPI_Master;
+end SPI_Master_ItsyBitsy;

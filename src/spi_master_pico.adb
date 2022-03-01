@@ -1,4 +1,4 @@
-package body SPI_Master is
+package body SPI_Master_Pico is
 
    procedure Initialize is
    begin
@@ -9,4 +9,4 @@ package body SPI_Master is
       SPI.Configure (Config);
    end Initialize;
 
-end SPI_Master;
+end SPI_Master_Pico;
