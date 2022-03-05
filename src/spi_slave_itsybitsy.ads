@@ -10,11 +10,12 @@ package SPI_Slave_ItsyBitsy is
 
    -----------------------------------------------------------------------
    --  Slave section
-   SPI  : RP.SPI.SPI_Port renames RP.Device.SPI_0;
-   MISO : RP.GPIO.GPIO_Point renames ItsyBitsy.GP19;
-   NSS  : RP.GPIO.GPIO_Point renames ItsyBitsy.GP5;
-   SCK  : RP.GPIO.GPIO_Point renames ItsyBitsy.GP18;
-   MOSI : RP.GPIO.GPIO_Point renames ItsyBitsy.GP20;
+   SPI  : RP.SPI.SPI_Port renames RP.Device.SPI_1;
+
+   SCK  : RP.GPIO.GPIO_Point renames ItsyBitsy.GP26;
+   NSS  : RP.GPIO.GPIO_Point renames ItsyBitsy.GP29;
+   MOSI : RP.GPIO.GPIO_Point renames ItsyBitsy.GP28;
+   MISO : RP.GPIO.GPIO_Point renames ItsyBitsy.GP27;
 
    Config : constant RP.SPI.SPI_Configuration
      := (Role   => RP.SPI.Slave,

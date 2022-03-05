@@ -28,18 +28,16 @@ begin
 
    SPI_Slave_ItsyBitsy.Initialize;
 
-
    loop
-
       --  do this to get the slave ready
       SPI_Slave_ItsyBitsy.SPI.Transmit (Data_Out, Status_Out);
 
       for I in 1 .. 1 loop
          SPI_Slave_ItsyBitsy.SPI.Receive (Data_In, Status_In, 0);
-         Data_Out (1) := not Data_In (1);
+         Data_Out (1) := not Data_In (1); -- THE_VALUE
          SPI_Slave_ItsyBitsy.SPI.Transmit (Data_Out, Status_Out);
       end loop;
-      RP.Device.Timer.Delay_Milliseconds (1);
+      RP.Device.Timer.Delay_Milliseconds (10);
       ItsyBitsy.LED.Toggle;
    end loop;
 end Main_Slave_ItsyBitsy;

@@ -12,24 +12,6 @@ with SPI_Slave_Pico;
 
 procedure Main_Slave_Pico is
 
-   procedure Trace_Initialize;
-   -----------------------------------------------------------------------
-   --  Trace section
-   Slave_Status_In        : RP.GPIO.GPIO_Point renames Pico.GP17;
-   Slave_Status_Out      : RP.GPIO.GPIO_Point renames Pico.GP16;
-   Data_In_NEQ_Data_Out   : RP.GPIO.GPIO_Point renames Pico.GP18;
-
-   procedure Trace_Initialize is
-   begin
-      Slave_Status_Out.Configure (RP.GPIO.Output);
-      Slave_Status_In.Configure (RP.GPIO.Output);
-      Data_In_NEQ_Data_Out.Configure (RP.GPIO.Output);
-
-      Slave_Status_Out.Clear;
-      Slave_Status_In.Clear;
-      Data_In_NEQ_Data_Out.Clear;
-   end Trace_Initialize;
-
    Data_In      : HAL.SPI.SPI_Data_16b (1 .. 1) := (others => 0);
    Status_In    : HAL.SPI.SPI_Status;
 
@@ -37,7 +19,6 @@ procedure Main_Slave_Pico is
    Data_Out    : HAL.SPI.SPI_Data_16b (1 .. 1) := (others => THE_VALUE);
    Status_Out  : HAL.SPI.SPI_Status;
 
-   use HAL.SPI;
    use HAL;
 
 begin
@@ -45,31 +26,16 @@ begin
    RP.Device.Timer.Enable;
    Pico.LED.Configure (RP.GPIO.Output);
 
-   Trace_Initialize;
-
    SPI_Slave_Pico.Initialize;
 
    loop
-      Slave_Status_In.Clear;
-      Slave_Status_Out.Clear;
-      Data_In_NEQ_Data_Out.Clear;
-
       --  do this to get the slave ready
       SPI_Slave_Pico.SPI.Transmit (Data_Out, Status_Out);
-      if Status_Out /= HAL.SPI.Ok then
-         Slave_Status_Out.Set;
-      end if;
 
       for I in 1 .. 1 loop
          SPI_Slave_Pico.SPI.Receive (Data_In, Status_In);
-         if Status_In /= HAL.SPI.Ok then
-            Slave_Status_In.Set;
-         end if;
          Data_Out (1) := not Data_In (1);
          SPI_Slave_Pico.SPI.Transmit (Data_Out, Status_Out);
-         if Status_Out /= HAL.SPI.Ok then
-            Slave_Status_Out.Set;
-         end if;
       end loop;
       RP.Device.Timer.Delay_Milliseconds (10);
       Pico.LED.Toggle;

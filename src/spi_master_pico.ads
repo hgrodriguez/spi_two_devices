@@ -11,10 +11,11 @@ package SPI_Master_Pico is
    -----------------------------------------------------------------------
    --  Master section
    SPI  : RP.SPI.SPI_Port renames RP.Device.SPI_0;
-   MISO : RP.GPIO.GPIO_Point renames Pico.GP0;
-   NSS  : RP.GPIO.GPIO_Point renames Pico.GP1;
-   SCK  : RP.GPIO.GPIO_Point renames Pico.GP2;
-   MOSI : RP.GPIO.GPIO_Point renames Pico.GP3;
+
+   MISO            : RP.GPIO.GPIO_Point renames Pico.GP16;
+   NSS             : RP.GPIO.GPIO_Point renames Pico.GP17;
+   SCK             : RP.GPIO.GPIO_Point renames Pico.GP18;
+   MOSI            : RP.GPIO.GPIO_Point renames Pico.GP19;
 
    Config          : constant RP.SPI.SPI_Configuration
      := (Role   => RP.SPI.Master,
