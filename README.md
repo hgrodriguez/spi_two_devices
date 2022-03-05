@@ -20,19 +20,31 @@ MOSI / 25 / 19
 MISO / 21 / 16
 ## Slave Pico
 Name of line / Pin of Pico / GPIO
+
 SCLK / 24 / 18
+
 NSS / 22 / 17
+
 MOSI / 21 / 16
+
 MISO / 25 / 19
 ## Master ItsyBitsy
 Name of line / Pin of Pico / GPIO
+
 SCLK / 5 / 26
+
 NSS / 8 / 29
+
 MOSI / 6 / 27
+
 MISO / 7 / 28
 ## Slave ItsyBitsy
 Name of line / Pin of Pico / GPIO
+
 SCLK / 5 / 26
+
 NSS / 8 / 29
+
 MOSI / 7 / 28
+
 MISO / 6 / 27
