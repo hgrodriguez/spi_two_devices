@@ -1,3 +1,16 @@
+--===========================================================================
+--
+--  This is the main slave program for the ItsyBitsy for the
+--     use cases:
+--        2: Master Pico      -> Slave ItsyBitsy
+--        4: Master ItsyBitsy -> Slave ItsyBitsy
+--
+--===========================================================================
+--
+--  Copyright 2022 (C) Holger Rodriguez
+--
+--  SPDX-License-Identifier: BSD-3-Clause
+--
 with HAL;
 with HAL.SPI;
 

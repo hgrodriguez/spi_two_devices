@@ -1,3 +1,16 @@
+--===========================================================================
+--
+--  This is the main master program for the Pico for the
+--     use cases:
+--        1: Master Pico -> Slave Pico
+--        2: Master Pico -> Slave ItsyBitsy
+--
+--===========================================================================
+--
+--  Copyright 2022 (C) Holger Rodriguez
+--
+--  SPDX-License-Identifier: BSD-3-Clause
+--
 with HAL;
 with HAL.SPI;
 

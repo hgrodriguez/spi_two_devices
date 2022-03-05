@@ -1,5 +1,17 @@
+--===========================================================================
+--
+--  This package implements the slave configuration for the ItsyBitsy
+--
+--===========================================================================
+--
+--  Copyright 2022 (C) Holger Rodriguez
+--
+--  SPDX-License-Identifier: BSD-3-Clause
+--
 package body SPI_Slave_ItsyBitsy is
 
+   -----------------------------------------------------------------------
+   --  see .ads
    procedure Initialize is
    begin
       SCK.Configure (RP.GPIO.Input, RP.GPIO.Floating, RP.GPIO.SPI);
