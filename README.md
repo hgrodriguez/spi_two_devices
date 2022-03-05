@@ -10,9 +10,13 @@ Demonstration of two SPI devices Master/Slave using Pico and ItsyBitsy
 # Pin layout
 ## Master Pico
 Name of line / Pin of Pico / GPIO
+
 SCLK / 24 / 18
+
 NSS / 22 / 17
+
 MOSI / 25 / 19
+
 MISO / 21 / 16
 ## Slave Pico
 Name of line / Pin of Pico / GPIO
