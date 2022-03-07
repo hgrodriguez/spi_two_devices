@@ -13,43 +13,35 @@ Demonstration of two SPI devices Master/Slave using Pico and ItsyBitsy
 
 # Pin layout Pico
 ## Master Pico
-Name of line / Pin of Pico / GPIO
 
-SCLK / 24 / 18
+| Name of line | Pin of Pico | GPIO |
+|--------------|-------------|------|
+| SCLK | 24 | 18 |
+| NSS | 22 | 17 |
+| MOSI | 25 | 19 |
+| MISO | 21 | 16|
 
-NSS / 22 / 17
-
-MOSI / 25 / 19
-
-MISO / 21 / 16
 ## Slave Pico
-Name of line / Pin of Pico / GPIO
+| Name of line | Pin of Pico | GPIO |
+|--------------|-------------|------|
+| SCLK | 24 | 18 |
+| NSS | 22 | 17 |
+| MOSI | 21 | 16 |
+| MISO | 25 | 19 |
 
-SCLK / 24 / 18
-
-NSS / 22 / 17
-
-MOSI / 21 / 16
-
-MISO / 25 / 19
 # Pin layout ItsyBitsy
 ## Master ItsyBitsy
-Name of line / Pin of ItsyBitsy / GPIO
+| Name of line | Pin of Pico | GPIO |
+|--------------|-------------|------|
+| SCLK | 5 | 26 |
+| NSS | 8 | 29 |
+| MOSI | 6 | 27 |
+| MISO | 7 | 28 |
 
-SCLK / 5 / 26
-
-NSS / 8 / 29
-
-MOSI / 6 / 27
-
-MISO / 7 / 28
 ## Slave ItsyBitsy
-Name of line / Pin of ItsyBitsy / GPIO
-
-SCLK / 5 / 26
-
-NSS / 8 / 29
-
-MOSI / 7 / 28
-
-MISO / 6 / 27
+| Name of line | Pin of Pico | GPIO |
+|--------------|-------------|------|
+| SCLK | 5 | 26 |
+| NSS | 8 | 29 |
+| MOSI | 7 | 28 |
+| MISO | 6 | 27 |

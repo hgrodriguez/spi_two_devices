@@ -1,6 +1,6 @@
 name = "spi_two_devices"
 description = "Demo program for 2 RP2040s talking to each other using SPI"
-version = "1.0.0"
+version = "1.0.1"
 
 authors = ["Holger Rodriguez"]
 maintainers = ["Holger Rodriguez <github@roseng.ch>"]
