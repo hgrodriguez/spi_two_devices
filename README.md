@@ -1,6 +1,10 @@
 # SPI 2 devices
 Demonstration of two SPI devices Master/Slave using Pico and ItsyBitsy
 
+# Overview of the bread board sections
+
+![Sections on Board](https://github.com/hgrodriguez/spi_two_devices/blob/main/documents/SectionsOfBreadboard.jpeg "Sections of the board")
+
 # Use Cases
 1. Master Pico -> Slave Pico
 2. Master Pico -> Slave ItsyBitsy
